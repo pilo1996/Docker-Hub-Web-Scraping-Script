@@ -1,4 +1,4 @@
-# Docker-Hub-Web-Scraping-Script
+# Docker Hub: a Web Scraping Script
 A Python script for web scraping dynamically the Docker Hub website and get a list of official and publisher-verified Images.
 
 ## Purpose
