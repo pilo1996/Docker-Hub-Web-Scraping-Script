@@ -50,7 +50,7 @@ for i in images:
                 officialImages.append(str(a['href'])[3:])
         counter += 1
 
-    with open(base_dir + 'list_docker_' + i + '_images.json', 'w', encoding='utf-8') as f:
+    with open(base_dir + 'list_docker_' + i + '_images_RAW.json', 'w', encoding='utf-8') as f:
         if i == "store":
             json.dump(verifiedImages, f, ensure_ascii=False, indent=4)
         else:
