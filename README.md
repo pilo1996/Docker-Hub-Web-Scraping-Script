@@ -15,6 +15,9 @@ Selenium 4 is a great library that has generally a great support for Web Scrapin
 ## Usage
 Download, solve dependencies, change local paths, configure your Web Driver (see below notes) and then Run.
 
+### Important Notes
+The scraping performing a url filtering: it scrapes all the images that are `Linux` and `Arm64` compatible platforms.
+
 ## Web Drivers
 Web Drivers are essentially micro version of the browsers that can dialogue (and be managed) by external software, like Selenium 4. 
 All browsers nowadays has Web Driver support, even Apple's Safari.
