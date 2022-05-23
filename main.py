@@ -1,7 +1,7 @@
 import os
 import time
 import json
-# selenium 4
+# Selenium 4
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -9,14 +9,18 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.edge.service import Service
 # WDM
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
-#BeautifulSoup
+# BeautifulSoup
 from bs4 import BeautifulSoup
 
-#MS Edge Driver
-#driver = webdriver.Edge(service=Service(EdgeChromiumDriverManager().install()))
+# Change the base_dir with your path.
+base_dir = '/Users/filippo/Desktop/UNIVE/Tesi e Tirocinio 2022/Data' + os.sep
 
-#Safari Driver
+# MS Edge Driver
+# driver = webdriver.Edge(service=Service(EdgeChromiumDriverManager().install()))
+
+# Safari Driver
 driver = webdriver.Safari()
+
 images = ["store", "official"]
 verifiedImages = list()
 officialImages = list()
@@ -25,8 +29,9 @@ for i in images:
     counter = 1
     while True:
         # Load the HTML page
-        driver.get("https://hub.docker.com/search?q=&type=image&image_filter="+i+"&operating_system=linux&architecture"
-                   "=arm64&page="+str(counter))
+        driver.get(
+            "https://hub.docker.com/search?q=&type=image&image_filter=" + i + "&operating_system=linux&architecture"
+                                                                              "=arm64&page=" + str(counter))
         time.sleep(2)
         # Parse processed webpage with BeautifulSoup
         soup = BeautifulSoup(driver.page_source, features="html.parser")
@@ -45,7 +50,7 @@ for i in images:
                 officialImages.append(str(a['href'])[3:])
         counter += 1
 
-    with open('/Users/filippo/Desktop/UNIVE/Tesi e Tirocinio 2022/Data/list_docker_'+i+'_images.json', 'w', encoding='utf-8') as f:
+    with open(base_dir + 'list_docker_' + i + '_images.json', 'w', encoding='utf-8') as f:
         if i == "store":
             json.dump(verifiedImages, f, ensure_ascii=False, indent=4)
         else:
