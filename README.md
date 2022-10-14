@@ -1,4 +1,7 @@
 # Docker Hub: a Web Scraping Script
+
+[![CodeFactor](https://www.codefactor.io/repository/github/pilo1996/docker-hub-web-scraping-script/badge)](https://www.codefactor.io/repository/github/pilo1996/docker-hub-web-scraping-script)
+
 A Python script for web scraping dynamically the Docker Hub website and get a list of official and publisher-verified Images.
 
 ## Purpose
